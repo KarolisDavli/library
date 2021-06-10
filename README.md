@@ -1,17 +1,16 @@
 # Project: Library :books:
- 
- ## Assignment
 
- - [Assignment page!](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library)
+## Assignment
 
- ## Results
+- Project work from Full Stack Javascript course on [The Odin Project](https://www.theodinproject.com)
+- [Assignment page!](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library)
 
- - Virtual library where users input can be takan and placed into a display
+## Results
 
- ## Stack
+- Virtual library where users input can be takan and placed into a display
 
- * HTML
- * CSS
- * Javascript
+## Stack
 
-
+- HTML
+- CSS
+- Javascript

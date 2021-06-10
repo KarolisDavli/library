@@ -10,7 +10,7 @@
 
  ## Stack
 
- * HTMl
+ * HTML
  * CSS
  * Javascript
 

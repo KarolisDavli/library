@@ -11,6 +11,6 @@ Virtual library where users input can be takan and placed into a display
 
 ## Stack
 
-HTML
-CSS
-Javascript
+> HTML
+> CSS
+> Javascript

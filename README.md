@@ -1,6 +1,6 @@
 # Project: Library :books: <h1> tag
 
-[Assignment page!] (https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library)
+[Assignment page!](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library)
 
  
  [- Assignment page] (https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library)
@@ -11,6 +11,7 @@
  
 
 [GitHub](http://github.com)
+[Assignment](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library)
   
 ## Results <h2>
 

@@ -4,6 +4,7 @@ let cancel = document.querySelector('.cancel');
 let submit = document.querySelector('.submit');
 
 
+
 let myLibrary = [];
 
 function Book(title, author, pages, read) {
@@ -13,23 +14,12 @@ function Book(title, author, pages, read) {
   this.read = read
 }
 
-
-
 function addBookToLibrary() {
   let newBook = createBook();
   myLibrary.push(newBook);
-  console.log(newBook);
-  console.log(myLibrary);
   putBook();
-  // myLibrary.push(book1);
-  // console.log(book1);
-  myLibrary.forEach(book => {
-
-  })
   popUp.classList.remove('pop-up-active');
 }
-
-
 
 // Generate new book object
 function createBook() {
@@ -38,18 +28,16 @@ function createBook() {
   let pages = document.querySelector('.pages').value;
   let read = document.querySelector('.read').value;
   const newBook = new Book(title, author, pages, read);
-  console.log(newBook.title);
   return newBook;
 }
-
 
 // Put new book in html
 function putBook() {
     let newBook = createBook();
     let lib = document.querySelector('.library');
 
-    let newBookLi = document.createElement('ul');
-    newBookLi.classList.add('book-card');
+    let newBookUl = document.createElement('ul');
+    newBookUl.classList.add('book-card');
     
     let newTitleLi = document.createElement('li');
     newTitleLi.innerHTML = '<strong>Title:</strong> ';
@@ -63,28 +51,54 @@ function putBook() {
     let newReadLi = document.createElement('li');
     newReadLi.innerHTML = '<strong>Read:</strong> ';
 
+    createButton(newBookUl);
+
   // Negauna data is ko sukurt textNode
     let newTitle = document.createTextNode(newBook.title);
     let newAuthor = document.createTextNode(newBook.author);
     let newPages = document.createTextNode(newBook.pages);
     let newRead = document.createTextNode(newBook.read);
-    console.log(newTitle);
   
     newTitleLi.appendChild(newTitle);
     newAuthorLi.appendChild(newAuthor);
     newPagesLi.appendChild(newPages);
     newReadLi.appendChild(newRead);
 
-    newBookLi.append(newTitleLi, newAuthorLi, newPagesLi, newReadLi);
+    newBookUl.append(newTitleLi, newAuthorLi, newPagesLi, newReadLi);
   
-    lib.appendChild(newBookLi);
-    console.table(myLibrary);
+    lib.appendChild(newBookUl);
 }
 
 
+// Create a button within
+function createButton(e) {
+  let button = document.createElement('button');
 
+  button.classList.add('delete-button');
+  button.setAttribute('data-key', 'delete');
+  button.innerText = 'delete';
 
+  // Display delete button on page
+  e.append(button);
+  
+  let deleteButton = document.querySelector('[data-key="delete"]')
 
+  // deleteBook(deleteButton)
+  console.log(deleteButton);
+}
+
+// Passing event as argument ^
+
+// Delete book
+function deleteBook(e) {
+  let newItem = e[0];
+  console.log(newItem);
+  newItem.addEventListener('click', () => {
+    alert('hey');
+  })
+}
+
+// Delete button event
 
 // Add
 addABook.addEventListener('click', function() {

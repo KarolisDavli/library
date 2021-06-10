@@ -3,7 +3,7 @@
 [Assignment page!] (https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library)
 
  
- https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library - Assignment page!
+ [- Assignment page] (https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library)
  [This is link] (https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library)
  
  http://github.com - automatic!
@@ -12,7 +12,7 @@
 
 [GitHub](http://github.com)
   
-###### <h6> Results
+## Results <h2>
 
 Virtual library where users input can be takan and placed into a display
 

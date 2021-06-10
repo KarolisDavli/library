@@ -2,8 +2,8 @@
 
 ## Assignment
 
-- Project work from Full Stack Javascript course on [The Odin Project](https://www.theodinproject.com) curriculum
-- [Assignment page!](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library)
+> > Project work from Full Stack Javascript course on [The Odin Project](https://www.theodinproject.com) curriculum
+> > [Assignment page!](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library)
 
 ## Results
 

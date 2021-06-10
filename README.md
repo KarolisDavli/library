@@ -47,6 +47,6 @@ Alternatively,
  ###### This is an <h6> tag
  ###### Or this <h6>
  
- # This is an <h1> tag
-## This is an <h2> tag
+ # This is an h1 <h1> tag
+## This is an h2 <h2> tag
 ###### This is an <h6> tag

@@ -17,7 +17,7 @@ function Book(title, author, pages, read) {
 function addBookToLibrary() {
   let newBook = createBook();
   myLibrary.push(newBook);
-  putBook();
+  putBook(newBook);
   popUp.classList.remove('pop-up-active');
 }
 
@@ -32,12 +32,15 @@ function createBook() {
 }
 
 // Put new book in html
-function putBook() {
+function putBook(item) {
     let newBook = createBook();
     let lib = document.querySelector('.library');
 
     let newBookUl = document.createElement('ul');
     newBookUl.classList.add('book-card');
+    newBookUl.setAttribute('data-key', myLibrary.indexOf(item))
+    let bookID = myLibrary.indexOf(item);
+    console.log(bookID);
     
     let newTitleLi = document.createElement('li');
     newTitleLi.innerHTML = '<strong>Title:</strong> ';
@@ -52,6 +55,9 @@ function putBook() {
     newReadLi.innerHTML = '<strong>Read:</strong> ';
 
     createButton(newBookUl);
+    deleteBookAction(bookID);
+    console.log(myLibrary[bookID]);
+
 
   // Negauna data is ko sukurt textNode
     let newTitle = document.createTextNode(newBook.title);
@@ -70,35 +76,37 @@ function putBook() {
 }
 
 
-// Create a button within
+// Create a UI button button
 function createButton(e) {
   let button = document.createElement('button');
-
   button.classList.add('delete-button');
-  button.setAttribute('data-key', 'delete');
   button.innerText = 'delete';
 
   // Display delete button on page
   e.append(button);
-  
-  let deleteButton = document.querySelector('[data-key="delete"]')
-
-  // deleteBook(deleteButton)
-  console.log(deleteButton);
 }
 
 // Passing event as argument ^
 
-// Delete book
-function deleteBook(e) {
-  let newItem = e[0];
-  console.log(newItem);
-  newItem.addEventListener('click', () => {
-    alert('hey');
-  })
-}
 
-// Delete button event
+
+
+// Delete book
+function deleteBookAction(id) {
+  let deleteButton = document.querySelector('.library');
+  deleteButton.addEventListener('click', function(e) {
+    console.log(id);
+    console.log(e.target.matches('data-key=id'));
+    if(e.target && e.target.dataset.key) {
+      console.log(id);
+    }
+  })
+
+//   button.addEventListener('click', () => {
+//     myLibrary.splice(myLibrary.indexOf(item),1);
+// })
+}
+// Event delegation ^
 
 // Add
 addABook.addEventListener('click', function() {

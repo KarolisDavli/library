@@ -1,9 +1,11 @@
 # Project: Library :books:
 
+> [Live app](https://unotreal.github.io/library/)
+
 ## Assignment
 
 > Project work from Full Stack Javascript course on [The Odin Project](https://www.theodinproject.com) curriculum.
-> [Assignment page here](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library)
+> [Assignment page here](https://www.theodinproject.com/paths/full-stack-javascript/courses/javascript/lessons/library).
 
 ## Results
 

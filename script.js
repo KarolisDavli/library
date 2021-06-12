@@ -39,9 +39,10 @@ function putBook(item) {
     let newBookUl = document.createElement('ul');
     newBookUl.classList.add('book-card');
     newBookUl.setAttribute('data-key', myLibrary.indexOf(item))
-    let bookID = myLibrary.indexOf(item);
-    console.log(bookID);
-    
+    let bookId = myLibrary.indexOf(item);
+
+    console.table(myLibrary);
+
     let newTitleLi = document.createElement('li');
     newTitleLi.innerHTML = '<strong>Title:</strong> ';
   
@@ -54,10 +55,7 @@ function putBook(item) {
     let newReadLi = document.createElement('li');
     newReadLi.innerHTML = '<strong>Read:</strong> ';
 
-    createButton(newBookUl);
-    deleteBookAction(bookID);
-    console.log(myLibrary[bookID]);
-
+    createButton(newBookUl, lib);
 
   // Negauna data is ko sukurt textNode
     let newTitle = document.createTextNode(newBook.title);
@@ -73,40 +71,28 @@ function putBook(item) {
     newBookUl.append(newTitleLi, newAuthorLi, newPagesLi, newReadLi);
   
     lib.appendChild(newBookUl);
+
 }
 
 
 // Create a UI button button
-function createButton(e) {
+function createButton(item, lib) {
   let button = document.createElement('button');
   button.classList.add('delete-button');
   button.innerText = 'delete';
 
   // Display delete button on page
-  e.append(button);
-}
+  item.append(button);
 
-// Passing event as argument ^
-
-
-
-
-// Delete book
-function deleteBookAction(id) {
-  let deleteButton = document.querySelector('.library');
-  deleteButton.addEventListener('click', function(e) {
-    console.log(id);
-    console.log(e.target.matches('data-key=id'));
-    if(e.target && e.target.dataset.key) {
-      console.log(id);
-    }
+  button.addEventListener('click', () => {
+    lib.removeChild(item);
+    myLibrary.splice(myLibrary.indexOf(item), 1);
+    console.table(myLibrary);
   })
-
-//   button.addEventListener('click', () => {
-//     myLibrary.splice(myLibrary.indexOf(item),1);
-// })
 }
-// Event delegation ^
+
+
+
 
 // Add
 addABook.addEventListener('click', function() {
@@ -122,21 +108,3 @@ cancel.addEventListener('click', function() {
 submit.addEventListener('click', addBookToLibrary)
 
 
-
-
-// Check if array already includes an item
-// arr.include();
-
-// submit.addEventListener('click', function() {
-//   let title = document.querySelector('.title').value;
-//   let author = document.querySelector('.author').value;
-//   let pages = document.querySelector('.pages').value;
-//   let read = document.querySelector('.read').value;
-
-//   const newBook = new Book(title, author, pages, read);
-  
-//   addBookToLibrary(newBook);
-//   myLibrary.push(newBook);
-//   console.log(newBook);
-//   console.log(myLibrary);
-// })

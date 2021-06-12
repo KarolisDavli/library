@@ -48,9 +48,26 @@
   background-color: lightcoral;
   border: none;
   border-radius: 12px;
-  display: block;
+  display: inline;
   padding: .7rem;
   margin: 0 0 0 auto;
+}
+
+/* Read button */
+.read-button {
+  border-radius: 12px;
+  background-color: transparent;
+  border: 1px solid #6abea7;
+  color: #6abea7;
+  border-radius: 12px;
+  display: inline;
+  padding: .7rem;
+  margin: 0 0 0 auto;
+}
+
+.read-button-completed {
+  background-color: #6abea7;
+  color: white;
 }
 
 /* New book form */

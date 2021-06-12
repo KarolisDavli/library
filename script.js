@@ -32,14 +32,14 @@ function createBook() {
 }
 
 // Put new book in html
-function putBook(item) {
+function putBook(book) {
     let newBook = createBook();
     let lib = document.querySelector('.library');
 
     let newBookUl = document.createElement('ul');
     newBookUl.classList.add('book-card');
-    newBookUl.setAttribute('data-key', myLibrary.indexOf(item))
-    let bookId = myLibrary.indexOf(item);
+    newBookUl.setAttribute('data-key', myLibrary.indexOf(book))
+    let bookId = myLibrary.indexOf(book);
 
     console.table(myLibrary);
 
@@ -56,6 +56,7 @@ function putBook(item) {
     newReadLi.innerHTML = '<strong>Read:</strong> ';
 
     createButton(newBookUl, lib);
+    readIt(newBookUl);
 
   // Negauna data is ko sukurt textNode
     let newTitle = document.createTextNode(newBook.title);
@@ -76,18 +77,32 @@ function putBook(item) {
 
 
 // Create a UI button button
-function createButton(item, lib) {
+function createButton(book, lib) {
   let button = document.createElement('button');
   button.classList.add('delete-button');
   button.innerText = 'delete';
-
+  
   // Display delete button on page
-  item.append(button);
+  book.append(button);
 
   button.addEventListener('click', () => {
-    lib.removeChild(item);
-    myLibrary.splice(myLibrary.indexOf(item), 1);
+    lib.removeChild(book);
+    myLibrary.splice(myLibrary.indexOf(book), 1);
     console.table(myLibrary);
+  })
+}
+
+function readIt(book) {
+  let readIt = document.createElement('button');
+
+  readIt.classList.add('read-button');
+  readIt.innerText = 'completed';
+
+  book.append(readIt);
+
+
+  readIt.addEventListener('click', () => {
+    readIt.classList.toggle('read-button-completed');
   })
 }
 

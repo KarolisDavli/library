@@ -55,8 +55,8 @@ function putBook(book) {
     let newReadLi = document.createElement('li');
     newReadLi.innerHTML = '<strong>Read:</strong> ';
 
-    createButton(newBookUl, lib);
-    readIt(newBookUl);
+    createDelete(newBookUl, lib);
+    createRead(newBookUl);
 
   // Negauna data is ko sukurt textNode
     let newTitle = document.createTextNode(newBook.title);
@@ -76,8 +76,8 @@ function putBook(book) {
 }
 
 
-// Create a UI button button
-function createButton(book, lib) {
+// Create 
+function createDelete(book, lib) {
   let button = document.createElement('button');
   button.classList.add('delete-button');
   button.innerText = 'delete';
@@ -92,7 +92,8 @@ function createButton(book, lib) {
   })
 }
 
-function readIt(book) {
+// Create 
+function createRead(book) {
   let readIt = document.createElement('button');
 
   readIt.classList.add('read-button');

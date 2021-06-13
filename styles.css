@@ -43,6 +43,12 @@
   background-color: aliceblue;
 }
 
+/* Buttons div */
+.buttons-div {
+  display: flex;
+  justify-content: space-between;
+}
+
 /* Delete button */
 .delete-button {
   background-color: lightcoral;
@@ -50,7 +56,6 @@
   border-radius: 12px;
   display: inline;
   padding: .7rem;
-  margin: 0 0 0 auto;
 }
 
 /* Read button */
@@ -62,7 +67,6 @@
   border-radius: 12px;
   display: inline;
   padding: .7rem;
-  margin: 0 0 0 auto;
 }
 
 .read-button-completed {

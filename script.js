@@ -3,8 +3,6 @@ let popUp = document.querySelector('.pop-up');
 let cancel = document.querySelector('.cancel');
 let submit = document.querySelector('.submit');
 
-
-
 let myLibrary = [];
 
 function Book(title, author, pages, read) {
@@ -14,11 +12,13 @@ function Book(title, author, pages, read) {
   this.read = read
 }
 
-function addBookToLibrary() {
+function addBookToLibrary(event) {
   let newBook = createBook();
+  console.log();
   myLibrary.push(newBook);
   putBook(newBook);
   popUp.classList.remove('pop-up-active');
+  event.preventDefaults();
 }
 
 // Generate new book object
@@ -39,9 +39,6 @@ function putBook(book) {
     let newBookUl = document.createElement('ul');
     newBookUl.classList.add('book-card');
     newBookUl.setAttribute('data-key', myLibrary.indexOf(book))
-    let bookId = myLibrary.indexOf(book);
-
-    console.table(myLibrary);
 
     let newTitleLi = document.createElement('li');
     newTitleLi.innerHTML = '<strong>Title:</strong> ';
@@ -55,10 +52,8 @@ function putBook(book) {
     let newReadLi = document.createElement('li');
     newReadLi.innerHTML = '<strong>Read:</strong> ';
 
-    createDelete(newBookUl, lib);
-    createRead(newBookUl);
+    createButtons(newBookUl, lib);
 
-  // Negauna data is ko sukurt textNode
     let newTitle = document.createTextNode(newBook.title);
     let newAuthor = document.createTextNode(newBook.author);
     let newPages = document.createTextNode(newBook.pages);
@@ -76,37 +71,32 @@ function putBook(book) {
 }
 
 
-// Create 
-function createDelete(book, lib) {
-  let button = document.createElement('button');
-  button.classList.add('delete-button');
-  button.innerText = 'delete';
-  
-  // Display delete button on page
-  book.append(button);
+// Create buttons in a div
+function createButtons(book, lib) {
 
-  button.addEventListener('click', () => {
+  let buttonsDiv = document.createElement('div');
+  buttonsDiv.classList.add('buttons-div');
+
+  let readButton = document.createElement('button');
+  readButton.classList.add('read-button');
+  readButton.innerText = 'completed';
+  readButton.addEventListener('click', () => {
+    readButton.classList.toggle('read-button-completed')
+  })
+
+
+  let deleteButton = document.createElement('button');
+  deleteButton.classList.add('delete-button');
+  deleteButton.innerText = 'delete';
+  deleteButton.addEventListener('click', () => {
     lib.removeChild(book);
     myLibrary.splice(myLibrary.indexOf(book), 1);
     console.table(myLibrary);
   })
+
+  buttonsDiv.append(readButton, deleteButton);
+  book.appendChild(buttonsDiv);
 }
-
-// Create 
-function createRead(book) {
-  let readIt = document.createElement('button');
-
-  readIt.classList.add('read-button');
-  readIt.innerText = 'completed';
-
-  book.append(readIt);
-
-
-  readIt.addEventListener('click', () => {
-    readIt.classList.toggle('read-button-completed');
-  })
-}
-
 
 
 

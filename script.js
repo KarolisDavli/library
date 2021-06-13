@@ -12,13 +12,12 @@ function Book(title, author, pages, read) {
   this.read = read
 }
 
-function addBookToLibrary(event) {
+function addBookToLibrary() {
   let newBook = createBook();
   console.log();
   myLibrary.push(newBook);
   putBook(newBook);
   popUp.classList.remove('pop-up-active');
-  event.preventDefaults();
 }
 
 // Generate new book object

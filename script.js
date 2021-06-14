@@ -5,11 +5,10 @@ let submit = document.querySelector('.submit');
 
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages) {
   this.title = title
   this.author = author
   this.pages = pages
-  this.read = read
 }
 
 function addBookToLibrary() {
@@ -26,6 +25,7 @@ function createBook() {
   let author = document.querySelector('.author').value;
   let pages = document.querySelector('.pages').value;
   let read = document.querySelector('.read').value;
+
   const newBook = new Book(title, author, pages, read);
   return newBook;
 }
@@ -40,33 +40,27 @@ function putBook(book) {
     newBookUl.setAttribute('data-key', myLibrary.indexOf(book))
 
     let newTitleLi = document.createElement('li');
-    newTitleLi.innerHTML = '<strong>Title:</strong> ';
+    newTitleLi.innerHTML = '<b><i>Title:</i></b> ';
   
     let newAuthorLi = document.createElement('li');
-    newAuthorLi.innerHTML = '<strong>Author:</strong> ';
+    newAuthorLi.innerHTML = '<b><i>Author:</i></b> ';
   
     let newPagesLi = document.createElement('li');
-    newPagesLi.innerHTML = '<strong>Page count:</strong> ';
-  
-    let newReadLi = document.createElement('li');
-    newReadLi.innerHTML = '<strong>Read:</strong> ';
+    newPagesLi.innerHTML = '<b><i>Page count:</i></b> ';
 
     createButtons(newBookUl, lib);
 
     let newTitle = document.createTextNode(newBook.title);
     let newAuthor = document.createTextNode(newBook.author);
     let newPages = document.createTextNode(newBook.pages);
-    let newRead = document.createTextNode(newBook.read);
   
     newTitleLi.appendChild(newTitle);
     newAuthorLi.appendChild(newAuthor);
     newPagesLi.appendChild(newPages);
-    newReadLi.appendChild(newRead);
 
-    newBookUl.append(newTitleLi, newAuthorLi, newPagesLi, newReadLi);
+    newBookUl.append(newTitleLi, newAuthorLi, newPagesLi);
   
     lib.appendChild(newBookUl);
-
 }
 
 
@@ -79,10 +73,16 @@ function createButtons(book, lib) {
   let readButton = document.createElement('button');
   readButton.classList.add('read-button');
   readButton.innerText = 'completed';
+
+  // Check if book is read
+  let readResult = checked();
+  if (readResult == true) {
+    readButton.classList.add('read-button-completed')
+  }
+
   readButton.addEventListener('click', () => {
     readButton.classList.toggle('read-button-completed')
   })
-
 
   let deleteButton = document.createElement('button');
   deleteButton.classList.add('delete-button');
@@ -113,3 +113,10 @@ cancel.addEventListener('click', function() {
 submit.addEventListener('click', addBookToLibrary)
 
 
+// Read switch
+let checkbox = document.getElementById('checkread');
+checkbox.addEventListener('change', checked);
+
+function checked() {
+ return checkbox.checked;
+}

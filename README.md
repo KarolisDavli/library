@@ -1,7 +1,5 @@
 # Project: Library :books:
 
-> [Live app](https://unotreal.github.io/library/)
-
 ## Assignment
 
 > Project work from Full Stack Javascript course on [The Odin Project](https://www.theodinproject.com) curriculum.
@@ -9,7 +7,7 @@
 
 ## Results
 
-> Virtual library where users input can be takan and placed into a display
+> Virtual library where users input can be takan and placed into a display > [Live app](https://KarolisDavli.github.io/library/)
 
 ## Stack
 

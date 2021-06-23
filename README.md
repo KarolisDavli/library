@@ -7,7 +7,7 @@
 
 ## Results
 
-> Virtual library where users input can be takan and placed into a display > [Live app](https://KarolisDavli.github.io/library/)
+> Virtual library where users input can be takan and placed into a display [Live app](https://KarolisDavli.github.io/library/)
 
 ## Stack
 

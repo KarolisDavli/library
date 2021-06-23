@@ -11,6 +11,6 @@
 
 ## Stack
 
-> HTML
-> CSS
+> HTML  
+> CSS  
 > Javascript
